@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="gripper" default="true"/>
+  <arg name="lamp" default="false"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find poppy_ergo_jr_description)/urdf/poppy_ergo_jr.urdf.xacro gripper:=$(arg gripper) lamp:=$(arg lamp)" />
+  <!-- push robot_description to factory and spawn robot in gazebo at the origin, change x,y,z arguments to spawn in a different position -->
+  <!-- <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model ergo_jr -x 0 -y 0 -z 0 -Y 1.5707963267948966" -->
+  <!--   respawn="false" output="screen" /> -->
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model ergo_jr -x 0 -y 0 -z 0 -J ergo_jr::m1 0.0 -J ergo_jr::m2 0.0 -J ergo_jr::m3 0.0 -J ergo_jr::m4 0.0 -J ergo_jr::m5 0.0 -J ergo_jr::m6 0.0 -unpause "
+    respawn="false" output="screen" />
+</launch>
