@@ -19,7 +19,7 @@
     <arg name="lamp" value="$(arg lamp)"/>
   </include>
 
-  <!-- <include file="$(find poppy_ergo_jr_gazebo)/launch/load_ergo_controllers.launch"/> -->
-  <include file="$(find poppy_ergo_jr_gazebo)/launch/load_ergo_position_controllers.launch"/>
+  <include file="$(find poppy_ergo_jr_gazebo)/launch/load_ergo_controllers.launch"/>
+  <!-- <include file="$(find poppy_ergo_jr_gazebo)/launch/load_ergo_position_controllers.launch"/> -->
 
 </launch>

@@ -129,7 +129,7 @@ if __name__ == '__main__':
     pitch = 0
     yaw = 0
 
-    mass = 0.001
+    mass = 0.01
     color = 'Blue'
 
     if len(sys.argv) < 2:
