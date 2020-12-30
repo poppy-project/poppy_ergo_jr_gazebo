@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+<!-- spawn a cube  -->
+<node name="spawn_cube" pkg="gazebo_ros" type="spawn_model" args="-file $(find poppy_ergo_jr_gazebo)/urdf/cube.urdf -urdf -model simple_cube -x 0 -y 0 -z 1" />
+
+
+</launch>
