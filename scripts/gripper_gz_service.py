@@ -50,11 +50,8 @@ class Gripper(object):
 
     def close_gripper(self):
 
-        # if self.current_effort > -0.1:
         effort = ApplyJointEffortRequest()
         effort.joint_name = 'm6'
-
-        # self.current_effort += -0.1
 
         effort.effort = -0.1
         effort.start_time.secs = 0
@@ -69,10 +66,6 @@ class Gripper(object):
             rospy.logerr("Service did not process request: " + str(exc))
 
     def open_gripper(self):
-
-        # if self.current_effort < 0.1:
-
-            # self.current_effort += 0.1
 
         effort = ApplyJointEffortRequest()
         effort.joint_name = 'm6'
@@ -91,23 +84,6 @@ class Gripper(object):
             rospy.logerr("Service did not process request: " + str(exc))
 
     def stop_gripper(self):
-
-        # effort = ApplyJointEffortRequest()
-        # effort.joint_name = 'm6'
-        # effort.effort = -self.current_effort
-        # self.current_effort = 0.0
-
-        # effort.start_time.secs = 0
-        # effort.start_time.nsecs = 0
-        # effort.duration.secs = -1  # no stop
-        # effort.duration.nsecs = 0
-
-        # try:
-        #     resp = self.effort_service(effort)
-        #     rospy.loginfo('success: {} status: {}'.format(
-        #         resp.success, resp.status_message))
-        # except rospy.ServiceException as exc:
-        #     rospy.logerr("Service did not process request: " + str(exc))
 
         req = JointRequestRequest()
         req.joint_name = 'm6'
@@ -148,11 +124,6 @@ class Gripper(object):
             if self.gripper_state == 'Open':
                 if self.gripperjointstate is not None and self.gripperjointstate >= 0.5:
                     self.stop_gripper()
-
-            #     else:
-            #         self.open_gripper()
-            # elif self.gripper_state == 'Close':
-            #     self.close_gripper()
 
             r.sleep()
 
