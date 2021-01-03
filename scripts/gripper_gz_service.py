@@ -27,6 +27,7 @@ class Gripper(object):
     def __init__(self):
 
         rospy.init_node('gripper_service')
+        rospy.loginfo('Starting gripper service')
         rospy.wait_for_service('/gazebo/apply_joint_effort')
         self.effort_service = rospy.ServiceProxy(
             '/gazebo/apply_joint_effort', ApplyJointEffort, persistent=True)
