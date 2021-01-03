@@ -101,8 +101,8 @@ def build_gz_cube_req(name, frame_id, x, y, z, roll, pitch, yaw, width, height, 
     sdf.model.link.visual.material.script.name = 'Gazebo/{}'.format(color)
     objectify.deannotate(sdf)
     etree.cleanup_namespaces(sdf)
-    model.model_xml = etree.tostring(
-        sdf, encoding='utf-8', xml_declaration=True)
+    model.model_xml = (etree.tostring(
+        sdf, encoding='utf-8', xml_declaration=True)).decode("utf-8")
 
     model.robot_namespace = "cube_spawner"
     model.initial_pose = p
