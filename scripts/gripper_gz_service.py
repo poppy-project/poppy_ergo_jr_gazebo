@@ -44,10 +44,15 @@ class Gripper(object):
 
         self.gripper_state = 'Closed'
         self.current_effort = 0.0
+        self.is_moving = False
 
     def joint_cb(self, msg):
         idx = msg.name.index('m6')
         self.gripperjointstate = msg.position[idx]
+        if abs(msg.velocity[idx]) > 0.01:
+            self.is_moving = True
+        else:
+            self.is_moving = False
 
     def close_gripper(self):
 
@@ -102,15 +107,21 @@ class Gripper(object):
                 self.stop_gripper()
                 self.gripper_state = 'Close'
                 self.close_gripper()
-
+                rospy.sleep(0.5)
             elif req.data == False:
                 self.stop_gripper()
                 self.gripper_state = 'Open'
                 self.open_gripper()
+                rospy.sleep(0.5)
+
+            while self.is_moving:  # wait until the gripper stops
+                rospy.sleep(0.1)
 
             resp = SetBoolResponse()
             resp.success = True
+            rospy.loginfo('Done')
             return resp
+
         except rospy.ServiceException as exc:
             rospy.logerr("Service did not process request: " + str(exc))
             resp = SetBoolResponse()

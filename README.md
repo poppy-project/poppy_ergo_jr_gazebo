@@ -15,3 +15,7 @@ Dépend du package [Poppy Ergo Jr Description](https://github.com/poppy-project/
 `roslaunch poppy_ergo_jr_gazebo spawn_cubes.launch`
 
 `rosrun poppy_ergo_jr_gazebo gripper_gz_service.py`
+
+TODO: Convertir le service gripper en Action Server.
+
+Testé sous ROS Melodic et Noetic
