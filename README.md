@@ -1,5 +1,7 @@
 # Simulation de Poppy Ergo Jr avec Gazebo
 
+![Poppy Ergo Jr in Gazebo ROS Melodic](./doc/img/ergo_jr_gz.gif)
+
 Charge le modèle dans Gazebo ainsi que les contrôleurs (trajectory ou position).
 Le modèle inclue la caméra qui est simulée par un plugin Gazebo.
 Enfin un service basique pour ouvrir/fermer la pince est disponible.
