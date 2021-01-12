@@ -3,6 +3,8 @@
   <arg name="paused" default="true"/>
   <arg name="gazebo_gui" default="true"/>
   <arg name="traj" default="true"/>
+  <arg name="gripper" default="true"/>
+  <arg name="lamp" default="false"/>
 
   <!-- startup simulated world -->
   <include file="$(find poppy_ergo_jr_gazebo)/launch/empty_world.launch">

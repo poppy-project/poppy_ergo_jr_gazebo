@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 #
@@ -59,7 +59,7 @@ class Gripper(object):
         effort = ApplyJointEffortRequest()
         effort.joint_name = 'm6'
 
-        effort.effort = -0.1
+        effort.effort = -0.15
         effort.start_time.secs = 0
         effort.start_time.nsecs = 0
         effort.duration.secs = -1  # no stop
