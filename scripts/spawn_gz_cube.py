@@ -121,9 +121,9 @@ if __name__ == '__main__':
     y = 0.0
     z = 0.0
 
-    width = 0.02
-    height = 0.02
-    depth = 0.02
+    width = 0.06
+    height = 0.06
+    depth = 0.06
 
     roll = 0
     pitch = 0

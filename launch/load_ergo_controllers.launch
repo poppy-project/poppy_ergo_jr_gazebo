@@ -12,6 +12,4 @@
           arm_controller
           --timeout 20"/>
 
-
-
 </launch>
